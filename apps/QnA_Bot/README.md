@@ -1,5 +1,13 @@
 # 🤖 Answers Of Your Questions
 
+> A conversational Q&A chatbot built with LangChain, Google Gemini, and Streamlit.
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ansul-s-gen-ai-projects-appsqna-botqna-bot-nbi8ap.streamlit.app)
+
+### 🚀 Live Demo
+
+👉 **[Try the QnA Bot](https://ansul-s-gen-ai-projects-appsqna-botqna-bot-nbi8ap.streamlit.app)**
+
 A beginner-friendly **AI Question & Answer chatbot** built with **Python, Streamlit, LangChain, and Google Gemini**.
 
 The goal of this project is to demonstrate how to connect a Large Language Model (LLM) to a simple web interface and create an interactive chatbot.
