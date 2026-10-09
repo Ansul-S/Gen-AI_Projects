@@ -478,14 +478,14 @@ A simple project structure could look like:
 ```text
 TaskBot/
 │
-├── taskbot.py
+├── sql_agent.py
 ├── my_tasks.db
 ├── .env
 ├── .gitignore
 └── README.md
 ```
 
-### `taskbot.py`
+### `sql_agent.py`
 
 Contains the main application.
 
@@ -1705,13 +1705,13 @@ The application instructs the agent to return at most 10 tasks for normal `SELEC
 Assuming your Python file is:
 
 ```text
-taskbot.py
+sql_agent.py
 ```
 
 run:
 
 ```bash
-streamlit run taskbot.py
+streamlit run sql_agent.py
 ```
 
 Streamlit will start a local web server.
@@ -1798,13 +1798,13 @@ Also make sure the `.env` file is in the correct project directory.
 Try:
 
 ```bash
-python -m streamlit run taskbot.py
+python -m streamlit run sql_agent.py
 ```
 
 instead of:
 
 ```bash
-streamlit run taskbot.py
+streamlit run sql_agent.py
 ```
 
 ---

@@ -371,7 +371,7 @@ A simple version of the project could look like this:
 ```text
 lightbot/
 │
-├── app.py
+├── light_bot.py
 ├── .env
 ├── .gitignore
 ├── requirements.txt
@@ -381,7 +381,7 @@ lightbot/
 Where:
 
 ```text
-app.py
+light_bot.py
 ```
 
 contains the Python application.
@@ -556,13 +556,13 @@ directly into your source code.
 Assuming the main file is:
 
 ```text
-app.py
+light_bot.py
 ```
 
 run:
 
 ```bash
-streamlit run app.py
+streamlit run light_bot.py
 ```
 
 Streamlit will start a local web server.
@@ -2450,7 +2450,7 @@ For example:
 
 ```text
 lightbot/
-├── app.py
+├── light_bot.py
 ├── .env
 └── requirements.txt
 ```
@@ -2458,7 +2458,7 @@ lightbot/
 and that you are running:
 
 ```bash
-streamlit run app.py
+streamlit run light_bot.py
 ```
 
 from the project environment.

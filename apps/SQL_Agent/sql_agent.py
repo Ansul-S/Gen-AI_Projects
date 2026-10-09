@@ -2,6 +2,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+import uuid
+from pathlib import Path
+
 import streamlit as st
 
 from langchain_groq import ChatGroq
@@ -15,7 +18,11 @@ from langgraph.checkpoint.memory import InMemorySaver
 # DATABASE
 # ============================================================
 
-db = SQLDatabase.from_uri("sqlite:///my_tasks.db")
+# Resolve the DB next to this file so it's the same DB no matter where
+# `streamlit run` is launched from
+DB_PATH = Path(__file__).resolve().parent / "my_tasks.db"
+
+db = SQLDatabase.from_uri(f"sqlite:///{DB_PATH}")
 
 db.run(
     """
@@ -165,6 +172,11 @@ st.caption("Manage your tasks using natural language.")
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+# One conversation thread per browser session (the cached agent is shared
+# across all sessions, so a fixed thread_id would mix everyone's chats)
+if "thread_id" not in st.session_state:
+    st.session_state.thread_id = str(uuid.uuid4())
+
 
 # Display previous messages
 for message in st.session_state.messages:
@@ -209,7 +221,7 @@ if prompt:
                 },
                 {
                     "configurable": {
-                        "thread_id": "taskbot-user"
+                        "thread_id": st.session_state.thread_id
                     }
                 },
             )

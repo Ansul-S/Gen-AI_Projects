@@ -48,8 +48,8 @@ if query:
     # Get Gemini response
     res = llm.invoke(query)
 
-    # Extract only the actual text
-    answer = res.content[0]["text"]
+    # Extract only the actual text (works whether content is a string or a list of blocks)
+    answer = res.text
 
     # Display AI response
     st.chat_message("ai").markdown(answer)

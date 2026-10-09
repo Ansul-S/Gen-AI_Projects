@@ -141,7 +141,8 @@ if query:
 
         for chunk, metadata in response:
 
-            if chunk.content:
+            # Only show the model's own text, not raw tool (search) output
+            if metadata.get("langgraph_node") == "model" and chunk.content:
 
                 message += chunk.content
 
