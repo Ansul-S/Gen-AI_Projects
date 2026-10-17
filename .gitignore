@@ -28,3 +28,4 @@ env/
 
 # data
 data/
+vector_db/
